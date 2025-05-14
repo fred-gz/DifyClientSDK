@@ -108,7 +108,8 @@ class StreamProcessor<T: Decodable>: NSObject, URLSessionDataDelegate {
             case .ping:
                 // `ping` events are typically keep-alive signals and are ignored.
                 break
-            // default: // Handle unknown event types if necessary, or ignore them.
+             default: // Handle unknown event types if necessary, or ignore them.
+                break
             }
         }
         // If it's the end of the stream and there's still unparseable data in the buffer, it might indicate an issue.
@@ -167,6 +168,7 @@ class StreamProcessor<T: Decodable>: NSObject, URLSessionDataDelegate {
             } else if line.starts(with: "data:") {
                 // SSE spec: `data:` field can span multiple lines. Append with newline for multi-line data.
                 let value = line.dropFirst("data:".count).trimmingCharacters(in: .whitespacesAndNewlines) // Trim leading/trailing whitespace from data line content.
+//                eventData.append(value)
                 eventData.append(value + "\n") // Append data line; multiple data lines are concatenated with newlines.
             } else if line.starts(with: "id:") {
                 eventId = line.dropFirst("id:".count).trimmingCharacters(in: .whitespaces)

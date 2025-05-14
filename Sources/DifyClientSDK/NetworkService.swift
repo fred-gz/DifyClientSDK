@@ -62,7 +62,7 @@ public class NetworkService {
         additionalHeaders?.forEach { request.setValue($1, forHTTPHeaderField: $0) }
 
         // Encode and set the request body if provided
-        if let body = body, (method == .post || method == .put || method == .patch) { // Add other methods if needed
+        if let body = body, method == .post { // Add other methods if needed
             do {
                 request.httpBody = try JSONEncoder().encode(body)
             } catch {
@@ -159,7 +159,7 @@ public class NetworkService {
             processor.setTask(task) // Allow processor to hold a reference to its task for cancellation
 
             // Handle termination of the stream (e.g., if the consuming Task is cancelled).
-            continuation.onTermination = @Sendable { _ in
+            continuation.onTermination = { @Sendable _ in
                 task.cancel() // Cancel the underlying URLSessionDataTask
             }
             

@@ -176,7 +176,11 @@ final class DifyClientSDKTests: XCTestCase {
     }
     
     func testAPIError_NonStreaming() async {
-        let errorJson = "{"code": 401, "message": "Unauthorized", "status": "error"}".data(using: .utf8)!
+        let error = """
+        "code": 401, "message": "Unauthorized", "status": "error"
+        """
+        
+        let errorJson = error.data(using: .utf8)!
         let requestURL = mockBaseURL.appendingPathComponent("/completion-messages")
         let mockHTTPResponse = HTTPURLResponse(url: requestURL, statusCode: 401, httpVersion: nil, headerFields: nil)
         MockURLProtocol.mockResponses[URLRequest(url: requestURL)] = (mockHTTPResponse, errorJson, nil)
@@ -205,11 +209,16 @@ final class DifyClientSDKTests: XCTestCase {
         let requestURL = mockBaseURL.appendingPathComponent("/chat-messages")
 
         // Simulate SSE events
-        let event1Data = "event: message\ndata: {\"conversation_id\": \"stream_conv_123\", \"answer\": \"Hello \", \"mode\": \"chat\"}\n\n".data(using: .utf8)!
-        let event2Data = "event: message\ndata: {\"conversation_id\": \"stream_conv_123\", \"answer\": \"World!\", \"mode\": \"chat\"}\n\n".data(using: .utf8)!
-        let endEventData = "event: message_end\ndata: {\"conversation_id\": \"stream_conv_123\", \"metadata\": {}}
-
-".data(using: .utf8)!
+        let event1Data = """
+event: message\ndata: {\"conversation_id\": \"stream_conv_123\", \"answer\": \"Hello \", \"mode\": \"chat\"}\n\n
+""".data(using: .utf8)!
+        
+        let event2Data = """
+event: message\ndata: {\"conversation_id\": \"stream_conv_123\", \"answer\": \"World!\", \"mode\": \"chat\"}\n\n
+""".data(using: .utf8)!
+        let endEventData = """
+"event: message_end\ndata: {\"conversation_id\": \"stream_conv_123\", \"metadata\": {}}
+""".data(using: .utf8)!
         
         var fullData = Data()
         fullData.append(event1Data)

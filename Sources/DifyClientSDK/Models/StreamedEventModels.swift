@@ -12,7 +12,6 @@ public enum DifyStreamEventType: String, Decodable {
     /// Marks the end of a message stream, often accompanied by metadata in its data field.
     case messageEnd     = "message_end"
     /// Indicates that a previous part of the message should be replaced (if supported by the API).
-    case messageReplace = "message_replace"
     /// Indicates an error occurred during the streaming process. The data field may contain error details.
     case error          = "error"
     /// A keep-alive or other non-data event, typically used to prevent connection timeouts.
@@ -62,7 +61,7 @@ public struct StreamedChatData: Decodable {
     /// The mode of the Dify application (e.g., "chat").
     public let mode: String?
     /// The chunk of the generated text answer.
-    public let answer: String
+    public let answer: String?
     /// Optional timestamp of when this chunk was created, typically in Unix epoch seconds.
     public let createdAt: Int?
     /// Often the same as `id`, or a more specific message identifier within the conversation.
