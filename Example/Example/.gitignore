@@ -1,0 +1,9 @@
+# Ignore all hidden files and directories
+.*
+!.gitignore
+
+# Xcode
+xcuserdata/
+
+# Swift Package Manager
+.build/

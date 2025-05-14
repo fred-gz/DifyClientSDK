@@ -1,2 +1,7 @@
+# Ignore all hidden files and directories
+.*
+!.gitignore
+
 Example/Example.xcodeproj/xcuserdata
 Example.xcworkspace/xcuserdata
+.build

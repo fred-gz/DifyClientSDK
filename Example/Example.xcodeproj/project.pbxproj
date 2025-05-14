@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B624AA412DD483F500C3BBE8 /* DifyClientSDK in Frameworks */ = {isa = PBXBuildFile; productRef = B624AA402DD483F500C3BBE8 /* DifyClientSDK */; };
+		B624AA782DD48FA300C3BBE8 /* DifyClientSDK in Frameworks */ = {isa = PBXBuildFile; productRef = B624AA772DD48FA300C3BBE8 /* DifyClientSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		B624AA332DD4828A00C3BBE8 /* Example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Example; sourceTree = BUILT_PRODUCTS_DIR; };
-		B624AA3F2DD4832600C3BBE8 /* DifyClientSDK */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DifyClientSDK; path = ..; sourceTree = "<group>"; };
+		B624AA762DD48F9700C3BBE8 /* DifyClientSDK */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DifyClientSDK; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B624AA412DD483F500C3BBE8 /* DifyClientSDK in Frameworks */,
+				B624AA782DD48FA300C3BBE8 /* DifyClientSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				B624AA352DD4828A00C3BBE8 /* Example */,
-				B624AA3E2DD4832600C3BBE8 /* Frameworks */,
+				B624AA752DD48F9600C3BBE8 /* Frameworks */,
 				B624AA342DD4828A00C3BBE8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,10 +64,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B624AA3E2DD4832600C3BBE8 /* Frameworks */ = {
+		B624AA752DD48F9600C3BBE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B624AA3F2DD4832600C3BBE8 /* DifyClientSDK */,
+				B624AA762DD48F9700C3BBE8 /* DifyClientSDK */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,7 +92,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				B624AA402DD483F500C3BBE8 /* DifyClientSDK */,
+				B624AA772DD48FA300C3BBE8 /* DifyClientSDK */,
 			);
 			productName = Example;
 			productReference = B624AA332DD4828A00C3BBE8 /* Example */;
@@ -307,7 +307,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B624AA402DD483F500C3BBE8 /* DifyClientSDK */ = {
+		B624AA772DD48FA300C3BBE8 /* DifyClientSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DifyClientSDK;
 		};

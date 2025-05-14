@@ -9,8 +9,8 @@ import Foundation
 import DifyClientSDK
 
 // 初始化DifyClient
-let apiKey = "" // 替换为你的API Key
-let client = DifyClient(apiKey: apiKey)
+let apiKey = Config.apiKey // 替换为你的API Key
+let client = DifyClient(apiKey: Config.apiKey)
 
 // 测试完成消息功能
 Task {
@@ -35,15 +35,15 @@ Task {
 //        }
 //        print("\n")
         
-//        // 3. 测试非流式聊天消息
-//        print("\n=== 测试非流式聊天消息 ===")
-//        let chatResponse = try await client.sendChatMessage(
-//            query: "Swift编程语言是什么？",
-//            user: "test-user-3",
-//            inputs: [:]
-//        )
-//        print("对话ID: \(chatResponse.conversationId)")
-//        print("回答: \(chatResponse.answer)")
+        // 3. 测试非流式聊天消息
+        print("\n=== 测试非流式聊天消息 ===")
+        let chatResponse = try await client.sendChatMessage(
+            query: "Swift编程语言是什么？",
+            user: "test-user-3",
+            inputs: [:]
+        )
+        print("对话ID: \(chatResponse.conversationId)")
+        print("回答: \(chatResponse.answer)")
         
         // 4. 测试流式聊天消息
         print("\n=== 测试流式聊天消息 ===")
