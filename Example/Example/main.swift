@@ -36,21 +36,19 @@ Task {
 //        print("\n")
         
         // 3. 测试非流式聊天消息
-        print("\n=== 测试非流式聊天消息 ===")
-        let chatResponse = try await client.sendChatMessage(
-            query: "Swift编程语言是什么？",
-            user: "test-user-3",
-            inputs: [:]
-        )
-        print("对话ID: \(chatResponse.conversationId)")
-        print("回答: \(chatResponse.answer)")
+//        print("\n=== 测试非流式聊天消息 ===")
+//        let chatResponse = try await client.sendChatMessage(
+//            query: "Swift编程语言是什么？",
+//            user: "test-user-3"
+//        )
+//        print("对话ID: \(chatResponse.conversationId)")
+//        print("回答: \(chatResponse.answer)")
         
         // 4. 测试流式聊天消息
         print("\n=== 测试流式聊天消息 ===")
         let chatStream = client.streamChatMessage(
             query: "告诉我更多关于Swift的特性。",
-            user: "test-user-4",
-            inputs: [:]
+            user: "test-user-4"
         )
         print("流式回答: ", terminator: "")
         for try await chunk in chatStream {

@@ -24,7 +24,7 @@ public struct ChatMessageRequest: Codable {
     ///   - conversationId: Optional identifier for an existing conversation.
     ///   - user: The unique identifier for the end-user.
     public init(inputs: [String: String]? = nil, query: String, responseMode: ResponseMode = .blocking, conversationId: String? = nil, user: String) {
-        self.inputs = inputs
+        self.inputs = inputs ?? [:]
         self.query = query
         self.responseMode = responseMode
         self.conversationId = conversationId

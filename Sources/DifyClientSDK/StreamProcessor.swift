@@ -168,7 +168,6 @@ class StreamProcessor<T: Decodable>: NSObject, URLSessionDataDelegate {
             } else if line.starts(with: "data:") {
                 // SSE spec: `data:` field can span multiple lines. Append with newline for multi-line data.
                 let value = line.dropFirst("data:".count).trimmingCharacters(in: .whitespacesAndNewlines) // Trim leading/trailing whitespace from data line content.
-//                eventData.append(value)
                 eventData.append(value + "\n") // Append data line; multiple data lines are concatenated with newlines.
             } else if line.starts(with: "id:") {
                 eventId = line.dropFirst("id:".count).trimmingCharacters(in: .whitespaces)
