@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B624AA782DD48FA300C3BBE8 /* DifyClientSDK in Frameworks */ = {isa = PBXBuildFile; productRef = B624AA772DD48FA300C3BBE8 /* DifyClientSDK */; };
+		B624ABB52DD6EBB300C3BBE8 /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = B624ABB42DD6EBB300C3BBE8 /* OpenAPIRuntime */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B624ABB52DD6EBB300C3BBE8 /* OpenAPIRuntime in Frameworks */,
 				B624AA782DD48FA300C3BBE8 /* DifyClientSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +95,7 @@
 			name = Example;
 			packageProductDependencies = (
 				B624AA772DD48FA300C3BBE8 /* DifyClientSDK */,
+				B624ABB42DD6EBB300C3BBE8 /* OpenAPIRuntime */,
 			);
 			productName = Example;
 			productReference = B624AA332DD4828A00C3BBE8 /* Example */;
@@ -122,6 +125,9 @@
 			);
 			mainGroup = B624AA2A2DD4828A00C3BBE8;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B624ABB32DD6EBB300C3BBE8 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B624AA342DD4828A00C3BBE8 /* Products */;
 			projectDirPath = "";
@@ -306,10 +312,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		B624ABB32DD6EBB300C3BBE8 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-runtime";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		B624AA772DD48FA300C3BBE8 /* DifyClientSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DifyClientSDK;
+		};
+		B624ABB42DD6EBB300C3BBE8 /* OpenAPIRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B624ABB32DD6EBB300C3BBE8 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */;
+			productName = OpenAPIRuntime;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
